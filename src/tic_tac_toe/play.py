@@ -41,6 +41,7 @@ def main() -> None:
                 else:
                     action = random_action(turn, rng)
                     if args.verbose:
+                        print("-" * 40)
                         print(format_board(turn))
                         print(f"{turn.player} selects {action}\n")
                     game.step(action)

@@ -41,6 +41,18 @@ class Game:
         if not self.active:
             raise RuntimeError("Game is finished; call reset().")
         observation, reward, terminated, truncated, _ = self.env.last()
+        
+        if observation is None:
+            # Return empty observation turn?
+            return Turn(
+                self.env.agent_selection,
+                np.ndarray(shape=(3,3,2)),
+                np.ndarray(shape=(9)),
+                float(reward),
+                terminated,
+                truncated,
+            )
+            
         return Turn(
             self.env.agent_selection,
             observation["observation"].copy(),
