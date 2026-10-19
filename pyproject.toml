@@ -4,7 +4,11 @@ version = "0.1.0"
 description = "Learn reinforcement learning with tic-tac-toe"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = ["pettingzoo[classic]==1.25.0", "numpy>=1.24"]
+dependencies = [
+    "pettingzoo[classic]==1.25.0",
+    "numpy>=1.24",
+    "torch>=2.14.1",
+]
 
 [project.scripts]
 tic-tac-toe = "tic_tac_toe.play:main"
